@@ -1,12 +1,8 @@
 import PropTypes from "prop-types";
+import { Options } from "./FeedbackOptions";
 
-export default function Statistics(props: {
-  good: number,
-  neutral: number,
-  bad: number,
-  total: number,
-  positivePercentage: number
-}) {
+type Props = Record<Options | "total" | "positivePercentage", number>;
+export default function Statistics(props: Props) {
   return <>
     <p>Good: {props.good}</p>
     <p>Neutral: {props.neutral}</p>
